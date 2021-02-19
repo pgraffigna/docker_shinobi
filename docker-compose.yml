@@ -1,0 +1,15 @@
+---
+version: '2'
+services:
+  shinobi:
+    image: migoller/shinobidocker
+    restart: always
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - $HOME/shinobi/config:/config
+      - $HOME/shinobi/videos:/opt/shinobi/videos
+      - $HOME/shinobi/datadir:/var/lib/mysql
+      - /dev/shm/shinobiDockerTemp:/dev/shm/streams
+    ports:
+      - "8080:8080"

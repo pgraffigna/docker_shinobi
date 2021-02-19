@@ -1,0 +1,16 @@
+#one-liner
+docker run -d \
+     -p 8080:8080 \
+     -v /etc/localtime:/etc/localtime:ro \
+     -v /etc/timezone:/etc/timezone:ro \
+     -v $HOME/shinobi/config:/config \
+     -v $HOME/shinobi/datadir:/var/lib/mysql \
+     -v $HOME/shinobi/videos:/opt/shinobi/videos \
+     -v /dev/shm/shinobiDockerTemp:/dev/shm/streams \
+     migoller/shinobidocker
+
+#mkdir -p shinobi/{config,datadir,videos} 
+
+#http://localhost:8080/super --> para crear usuarios
+#http://localhost:8080/ --> para agregar las camaras
+
